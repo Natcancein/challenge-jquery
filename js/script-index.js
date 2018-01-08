@@ -3,9 +3,19 @@ $(document).ready( function(){
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 	$(".js-back").hide();
-	
+
+$(function printNews(){
+	$(".showNews").append('NUEVAS RECETAS')
+});
+
 
 });
+
+/*
+* Función que se encarga de pintar una noticia
+* dentro del p class showNews
+*/
+
 
 
 /*
