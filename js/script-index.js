@@ -4,26 +4,34 @@ $(document).ready( function(){
 	renderHighlightedRecipes(recipesArray);
 	$(".js-back").hide();
 
-$(function printNews(){
-	$(".showNews").append('NUEVAS RECETAS')
-});
-
-
-});
 
 /*
 * Función que se encarga de pintar una noticia
 * dentro del p class showNews
 */
 
+ $(function printNews(){
+ 	$(".showNews").append('NUEVAS RECETAS')
+ });
+
+
+});
 
 
 /*
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
 */
+var recipes = [];
 function renderHighlightedRecipes(recipesArray) {
-	console.log('Recipes: ', recipesArray);
+	//console.log('Recipes: ', recipesArray);
+	
+	for(var i in recipesArray){
+	if(recipesArray[i].highlighted == true){
+		recipes.push(recipesArray[i])
+	renderRecipe(recipes);
+		} 
+	}
 }
 
 /*
@@ -32,8 +40,11 @@ function renderHighlightedRecipes(recipesArray) {
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-recipe.html"
 */
+
 function renderRecipe(recipe) {
-	console.log('Voy a pintar la receta: ', recipe);
+
+	console.log('Voy a pintar la receta: ', recipes);
+	
 }
 
 
