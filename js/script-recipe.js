@@ -21,3 +21,10 @@ $(document).ready( function(){
   	$('.js-show-make').addClass('active');
   	$('.js-show-recipe').removeClass('active');
   });
+
+/**
+ * funcion para volver al index.html
+ */
+$(".js-back").click(function(){
+	  window.location = 'index.html';
+})
