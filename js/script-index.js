@@ -22,14 +22,12 @@ $(document).ready( function(){
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
 */
-var recipes = [];
-function renderHighlightedRecipes(recipesArray) {
-	//console.log('Recipes: ', recipesArray);
-	
+var recipe = [];
+function renderHighlightedRecipes(recipesArray) {	
 	for(var i in recipesArray){
 	if(recipesArray[i].highlighted == true){
-		recipes.push(recipesArray[i])
-	renderRecipe(recipes);
+		recipe.push(recipesArray[i]);
+		renderRecipe(recipesArray[i]);
 		} 
 	}
 }
@@ -42,10 +40,24 @@ function renderHighlightedRecipes(recipesArray) {
 */
 
 function renderRecipe(recipe) {
-
-	console.log('Voy a pintar la receta: ', recipes);
+	//console.log('Voy a pintar la receta: ', recipes);
 	
-}
+	var title = recipe.title;
+	var name = recipe.source.name;
+	var image = recipe.name;
+		$(".list-recipes").append('<a class="item-recipe" href="#">' +
+                               '<span class="attribution">'+
+                                 '<span class="title-recipe">'+ title +'</span>' +
+                                 '<span class="metadata-recipe">'+
+                                   '<span class="author-recipe">'+ name +'</span>' +
+                                   '<span class="bookmarks-recipe">' +
+                                     '<span class="icon-bookmark"></span>' +
+                                   '</span>' +
+                                 '</span>' +
+                               '</span>' +
+                               '<img src="img/recipes/320x350/' + image + '.jpg' + '"/>' +
+                             '</a>');
+ };
 
 
 
