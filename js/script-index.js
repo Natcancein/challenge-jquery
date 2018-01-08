@@ -4,6 +4,8 @@ $(document).ready( function(){
 	renderHighlightedRecipes(recipesArray);
 	$(".js-back").hide();
 
+   console.log(activities);
+
 
 /*
 * Función que se encarga de pintar una noticia
@@ -13,6 +15,8 @@ $(document).ready( function(){
  $(function printNews(){
  	$(".showNews").append('NUEVAS RECETAS')
  });
+
+ console.log('Recipes: ', recipesArray);
 
 
 });
@@ -65,7 +69,10 @@ function renderRecipe(recipe) {
 * Función que se encarga de pintar todas las actividades
 */
 function renderActivities(activitiesArray) {
-	console.log('Activities: ', activitiesArray);
+	
+  for (var i = 0; i < activities.length; i++) {
+      renderActivity(activities[i]);
+    } 
 }
 
 /*
@@ -74,6 +81,8 @@ function renderActivities(activitiesArray) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity(recipe) {
+	console.log('Activities: ', activities);
+	$('.wrapper-message').hide();
 	
 }
 
