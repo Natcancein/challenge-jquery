@@ -2,6 +2,8 @@ $(document).ready( function(){
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
+
+
 	$(".js-back").hide();
 
    console.log(activities);
@@ -18,6 +20,10 @@ $(document).ready( function(){
 
  console.log('Recipes: ', recipesArray);
 
+/*
+* Llamando a la función renderActivities
+*/
+renderActivities(activities);
 
 });
 
@@ -82,8 +88,26 @@ function renderActivities(activitiesArray) {
 */
 function renderActivity(recipe) {
 	console.log('Activities: ', activities);
-	$('.wrapper-message').hide();
+	if (activities.length > 0){
+		 $('.wrapper-message').hide();
+	}
+	var avatarActivity = recipe.userAvatar;
+	var nameActivity = recipe.userName;
+	var titleActivity = recipe.recipeName;
+	var textActivity = recipe.text;
+	var placeActivity = recipe.place;
+	var imageActivity = recipe.image;
 	
+
+	$('.list-activities').append('<a href="#" class="item-activity">'+
+															 '<span class= "attribution">'+'<span class="avatar">'+
+															 '<img src="'+avatarActivity+'" class="image-avatar">'+'</span>'+
+															 '<span class="meta">'+'<span class="author">'+nameActivity+'</span>'+
+															 '<span class="recipe">'+titleActivity+'</span>: '+textActivity+
+															 '<span class="location">&mdash;'+placeActivity+'</span>'+'</span>'+
+															 '</span >'+ '<div class="bg-image" style="background-image: url(' + imageActivity +');"></div>'+
+															'</a >');
+
 }
 
 
